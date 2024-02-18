@@ -1,0 +1,679 @@
+
+/*
+background-image: url("photographer.jpg"); /* The image used 
+background-color: #cccccc; /* Used if the image is unavailable 
+height: 500px; /* You must set a specified height 
+background-position: center; /* Center the image 
+background-repeat: no-repeat; /* Do not repeat the image 
+background-size: cover; /* Resize the background image to cover the entire container 
+*/
+
+
+/* ALLMÄNNT */
+
+*, *::before, *::after{ 
+  box-sizing: border-box;
+
+}
+
+body{
+  margin: 0;
+  padding: 0;
+  font-family: poppins, arial;
+  
+      
+}
+
+h1 {
+  font-size: 2.2rem;
+  text-align: center; 
+
+}
+
+h2{
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+
+.om-oss-textbox p a{
+  color: hsl(159, 98%, 20%);
+  text-decoration: none;
+  font-style: italic;
+}
+
+p a:hover {
+  color:hsl(150, 71%, 40%);
+  
+}
+
+
+
+/* HEM - SEKTIONEN */
+/* HEM - SEKTIONEN */
+/* HEM - SEKTIONEN */
+
+
+#intro{     /* bakgrundsbilden skall ligga under hela hem-sectionen dvs header och introtitlarna */
+  background-color: hsla(189, 28%, 13%, 0.229);
+  background-image: url("BILDER-REPR/BAKGRUND-1-2.jpg"); 
+  /*background-blend-mode: multiply;  /*'multiply' darkens using the darkest colors, 'lighten' uses the light colors */
+  background-size: cover;
+  background-repeat: no-repeat;  
+  height: 100vh;
+  
+  background-position: right top; /*denna tillsammans med cover gör att center, bottom alltid syns*/
+  /*border-top: 4rem solid white;  /*  är inte säker om denna ska vara med */    
+ 
+}
+
+
+
+
+header{
+    background-color: hsla(0, 0%, 0%, 0.342);      
+    display: flex;  
+    justify-content: space-between;/* lägger listan längst till höger - vet ej riktigt varför*/
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    margin-top: 0;
+    backdrop-filter: blur(0.1rem);
+    z-index: 101;
+    
+}
+
+
+.logo {    
+    width: 5.2rem;
+    margin-top: 0.4rem;
+    margin-bottom: -1.5rem;
+    margin-left: 0.3rem;
+       
+}
+
+
+nav ul{  
+  list-style: none;  /* tar bort prickarna i ul*/
+  margin: 0.1em; 
+  padding: 0;
+    
+} 
+
+nav ul li {
+  display: inline-block;
+  margin: 0.8em 0.4em 0.5em 0.4em;
+    
+}
+
+nav ul li a {         /*endast decoration av länkarna*/
+  text-decoration: none; /*tar bort undersrykning*/
+  color: white;
+  font-size: 0.71rem; 
+  transition: all 0.4s ease 0s;
+  
+  
+}
+
+nav ul li a:hover {
+  color:hsl(158, 100%, 39%);
+  font-weight: bold;
+
+}
+
+
+/*VÄLKOMSÖVERSKRIFTER*/
+
+
+.intro-titlar h1{
+  padding-top: 40vh;
+  margin-top: 0;
+  color: #fff;  
+  font-weight: bold;  
+
+}
+
+
+/* OM OSS - SEKTIONEN */
+/* OM OSS - SEKTIONEN */
+/* OM OSS - SEKTIONEN */
+
+.om-oss-container{
+  padding-top: 1rem;
+  padding-bottom: 0.4rem;
+}
+
+
+.om-oss-header{
+  text-align: center;
+  padding-top: 2rem;
+  color: hsl(158, 32%, 29%);  
+  
+}
+
+.om-oss-bild{
+  width: 100%;
+  padding: 0;
+  margin-top: -4rem;; 
+  z-index: 1;
+    
+}
+
+.om-oss-textbox{
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;  
+  text-align: center;
+  margin-top: -1.5rem;
+  z-index: 100;
+}
+
+/* GALLERI - SEKTIONEN */
+/* GALLERI - SEKTIONEN */
+/* GALLERI - SEKTIONEN */
+
+.galleri-header{
+  text-align: center;
+  padding: 2.7em 2em 0.3em 2em;
+  background-color: hsl(148, 12%, 73%);
+  color: #fff;
+  margin-bottom: -1px;
+    
+}
+
+.galleri-section{
+  background-color: hsl(148, 12%, 73%);
+  padding-bottom: 4rem;
+  
+}
+
+.galleri{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;  
+  margin: 0 auto;
+  padding: 2rem 1rem 3rem 1rem;
+  background-color: hsla(150, 12%, 73%, 0);
+  
+}
+
+.galleri .galleri-div{  
+  display: inline-block;
+  width: 100%;
+  max-width: 20rem;
+  height: 16.3em;
+  object-fit: cover;
+  display: none;   /* GÖR SÅ ATT INGA BILDER I GALLERIET VISAS*/
+  
+}
+
+.galleri .galleri-div .image {  
+  width: 100%;
+  max-width: 20rem;
+  height: 16.3em;
+  object-fit: cover;
+  border-radius: 4px;
+  box-shadow: 0 5px 9px hsla(159, 88%, 13%, 0.759);
+
+}
+
+
+.galleri .galleri-div:nth-child(1), 
+.galleri .galleri-div:nth-child(2), 
+.galleri .galleri-div:nth-child(3), 
+.galleri .galleri-div:nth-child(4), 
+.galleri .galleri-div:nth-child(5), 
+.galleri .galleri-div:nth-child(6), 
+.galleri .galleri-div:nth-child(7), 
+.galleri .galleri-div:nth-child(8), 
+.galleri .galleri-div:nth-child(9), 
+.galleri .galleri-div:nth-child(10), 
+.galleri .galleri-div:nth-child(11), 
+.galleri .galleri-div:nth-child(12),
+.galleri .galleri-div:nth-child(13), 
+.galleri .galleri-div:nth-child(14), 
+.galleri .galleri-div:nth-child(15), 
+.galleri .galleri-div:nth-child(16), 
+.galleri .galleri-div:nth-child(17), 
+.galleri .galleri-div:nth-child(18), 
+.galleri .galleri-div:nth-child(19), 
+.galleri .galleri-div:nth-child(20)
+{
+  display: inline-block;
+  
+
+}
+
+.ladda-fler-bilder{
+  width: 100%;
+  max-width: 12.5rem;
+  text-align: center;
+  color: white;
+  font-size: 0.9rem;
+  box-shadow: 0 6px 10px hsla(159, 88%, 10%, 0.488);
+  padding: 0.3rem 1rem 0.3rem 1rem;
+  margin: 0 auto 0;
+  cursor: pointer;
+  transition: all 0.4s ease 0s;
+    
+}
+
+.ladda-fler-bilder:hover{
+  color: hsla(159, 86%, 12%, 0.563);
+  background-color: hsl(152, 18%, 81%);
+  font-weight: bold;
+  box-shadow: 0 1px 3px hsla(159, 88%, 13%, 0.5);
+}
+
+/* POSITIONERAR OM VISSA BILDER */ 
+#om-positionera-top{
+  object-position: top;
+}
+
+#om-positionera-left{
+  object-position: left;
+}
+
+
+
+/* KONTAKT - SEKTIONEN */
+/* KONTAKT - SEKTIONEN */
+/* KONTAKT - SEKTIONEN */
+
+
+.kontakt{
+  background-color: hsla(10, 4%, 69%, 0.507);
+  background-image: url("BILDER-REPR/BAMSE-BADAR2.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-blend-mode: lighten;
+  margin-top: 1rem;
+  padding-top: 5rem;
+  height: 100svh;
+  
+}
+
+.kontakt-header{
+  text-align: center;
+  padding: 2.2em 2em 0 2em;  
+  color: #000;
+  margin-top: 0;
+}
+
+.kontakt p{  
+  padding: 0 4.5em 0.3rem 4.5em; 
+  text-align: center;
+  margin-top: -1.5rem;
+}
+
+
+.kontakt-formulär{  
+  
+  margin: -1.5rem auto 3rem auto;  
+  padding: 1.5rem;
+  
+}
+
+.kontakt-formulär .container {
+  width: 90%;
+  margin: 0 auto 0 auto;
+  text-align: center;
+  
+}
+
+.namn-del{display: flex;
+  flex-direction: row;
+  justify-content: space-between;  
+  
+}
+
+input{    /*ANVÄND EV DISPLAY FLEX SPACE BETWEEN*//*ANVÄND EV DISPLAY FLEX SPACE BETWEEN*/
+  
+  margin: 0.8rem 0 0.8rem 0;
+  border: none;    
+  padding: 0.4rem;
+  background-color: hsla(0, 0%, 98%, 0.712);
+  width: 49%;  
+
+}
+
+textarea{
+  border: none;    
+  padding: 0.2rem;
+  background-color: hsla(0, 0%, 98%, 0.712);
+  width: 100%;  
+}
+
+::placeholder{
+  color: hsl(0, 9%, 25%);
+  opacity: 1;
+  font-family: poppins;
+  padding-left: 0.5rem;
+  font-size: 1.1em;
+
+}
+
+.kontakt-formulär .container #submit{
+  width: 23%;
+  color: hsl(0, 9%, 25%);
+  font-family: poppins;
+  background-color:hsla(0, 0%, 98%, 0.712);
+  cursor: pointer;
+  border: none;
+  margin-top: 0.6em;
+  padding: 0.2rem;
+  font-size: 0.95em;
+    
+}
+
+/* FOOTER */
+/* FOOTER */
+/* FOOTER */
+
+.footer-nav{
+  /*display: flex;
+  flex-direction: column;
+  padding: rem; 
+  justify-content: space-between;*/
+  margin-top: 2.5rem;
+  margin-left: 1rem;
+  margin-bottom: 5rem;
+ 
+   
+}
+
+
+.footer-nav p a, li{
+  color: black;
+  text-decoration: none;
+  list-style: none;
+
+}
+
+.footer-nav ul li a:hover {
+  color:hsl(158, 99%, 29%);
+  font-weight: bold;
+
+}
+
+.länkar{
+  font-weight: bold;
+  
+}
+
+.fotlista{
+  padding-top: 1rem;
+  
+}
+
+/* TACK-SIDAN */
+/* TACK-SIDAN */
+/* TACK-SIDAN */
+
+.tack-container{
+  background-color: hsla(10, 4%, 69%, 0.507);
+  background-image: url("BILDER-REPR/SNÖ_BAMSE.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-blend-mode: lighten;
+  height: 100vh;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+    
+  
+}
+
+.meddelande-svar{
+     
+  color: #0c3749;
+  margin-top: 0;
+  margin-bottom: 0;
+    
+}
+
+
+
+
+/**MEDIA QUERY FOR COMPUTERWIDE SCREENS **/
+/**MEDIA QUERY FOR COMPUTERWIDE SCREENS **/
+/**MEDIA QUERY FOR COMPUTERWIDE SCREENS **/
+
+
+
+
+
+@media (width < 319px){  /**MEDIA QUERY FOR COMPUTERWIDE SCREENS **//**MEDIA QUERY FOR COMPUTERWIDE SCREENS **/
+
+  .logo {    
+    width: 0;    
+       
+}
+
+}
+
+
+
+@media (600px <= width <= 900px){/**MEDIA QUERY FOR COMPUTERWIDE SCREENS **//**MEDIA QUERY FOR COMPUTERWIDE SCREENS **/
+  
+ 
+
+
+  h1 {
+    font-size: 3.5rem;
+  }
+  
+  h2{
+    font-size: 2.2rem;  
+  }
+
+  /* INTRO */
+
+  nav ul li {
+    
+    margin: 0.8em 1em 0.5em 1em;
+}
+
+nav ul li a {
+  font-size: 0.9rem;
+}
+
+.logo{    
+    
+  width: 6rem;    
+  
+}
+
+/* KONTAKT */
+
+
+
+
+
+/* FOOTER */
+
+.footer-nav{
+  display: flex;
+  padding: 0 3rem 0 3rem;
+  justify-content: space-around;
+  font-size: 1.1em;
+ 
+}
+
+
+
+}
+
+
+
+@media (width >= 900px){ /**MEDIA QUERY FOR COMPUTERWIDE SCREENS **//**MEDIA QUERY FOR COMPUTERWIDE SCREENS **/
+
+
+  /*ALLMÄNT*/
+  /*ALLMÄNT*/
+
+  h1{
+    font-size: 4rem;
+    
+  }
+  
+  h2{
+    font-size: 2.8rem;
+    
+  }
+
+
+  /*HOMESEKTION*/
+  /*HOMESEKTION*/
+ 
+
+  .logo{    
+    
+    width: 8.5rem;    
+    margin-top: 1.2rem;
+    margin-left: 1.3rem;
+    margin-bottom: -2.5rem;
+  }
+ 
+
+  nav ul{
+    margin-top: 0.2rem;
+  }
+
+  nav ul li {
+    
+    margin: 1.9em; 
+      
+    }  
+    
+    nav ul li a {
+      font-size: 1.1rem;
+    }
+
+  
+.intro-titlar h1{
+  padding-top: 40vh;
+  margin-top: 0;  
+    
+}
+
+/* OM OSS - SEKTIONEN */
+/* OM OSS - SEKTIONEN */
+
+
+.om-oss-header{
+  
+  padding-top: 5rem;
+  font-size: 3.5em;
+    
+}
+
+.om-oss-bild{
+  margin-top: -10rem;
+  
+}
+
+.om-oss-container .om-oss-textbox{
+  width: 100%;
+  padding-bottom: 3rem;
+     
+}
+
+.om-oss-textbox p{
+  width: 62%;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1.2em;
+}
+
+/*GALLERISEKTION*/
+/*GALLERISEKTION*/
+
+.galleri-section{
+  padding-bottom: 7rem;
+}
+
+.ladda-fler-bilder{
+  
+  font-size: 1.5rem;
+  max-width: 15rem;      
+}
+
+
+.galleri .galleri-div{
+  transition: 0.9s;
+}
+
+  .galleri-div:hover{
+  transform: scale(1.6);
+  z-index: 2;
+}
+
+
+/* KONTAKT - SEKTIONEN */
+/* KONTAKT - SEKTIONEN */
+
+
+
+.kontakt p{  
+  font-size: 1.3rem;
+}
+
+
+.kontakt-formulär{  
+  width: 60%;
+  margin: 0 auto 0rem auto;  
+  padding: 0 1.5rem 1.5rem 1.5rem;
+  
+}
+
+.kontakt-formulär .container {
+  width: 100%;
+  margin: 0 auto 0 auto;
+  text-align: center;
+  
+}
+
+.kontakt{
+  margin-top: 0;
+}
+
+
+.kontakt-header{
+  padding: 1em 2em 2rem 2em;  
+  
+}
+
+
+
+/* FOOTER */
+/* FOOTER */
+
+
+.footer-nav{
+  display: flex;  
+  justify-content: space-around;
+  font-size: 1.2em;
+  padding: 0 3rem 0 3rem;
+   
+}
+
+
+}
+  
+
+
+
+
+
+
+
