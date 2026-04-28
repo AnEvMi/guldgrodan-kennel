@@ -318,7 +318,7 @@ backdrop-filter: blur(0.1rem); z-index: 101;
 }
 
 /* POSITIONERAR OM VISSA BILDER */ 
-#om-positionera-top{
+.om-positionera-top{
   object-position: top;
 }
 
