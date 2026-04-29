@@ -173,7 +173,7 @@ backdrop-filter: blur(0.1rem); z-index: 101;
 
 
 .blogg-text a:hover {
-  color: hsl(150, 71%, 70%)
+  color: hsl(150, 71%, 70%);
   font-weight: bold;
 }
 
