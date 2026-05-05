@@ -512,7 +512,7 @@ textarea{
 /**MEDIA QUERY FOR COMPUTERWIDE SCREENS **/
 
 
-@media (width < 319px){  /**MEDIA QUERY FOR COMPUTERWIDE SCREENS - för mindre format än vanliga mobiler - MEDIA QUERY FOR COMPUTERWIDE SCREENS **/
+@media (width < 319px){  /**MEDIA - för mindre format än vanliga mobiler **/
 
   .logo {    
     width: 0;           
